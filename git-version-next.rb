@@ -2,20 +2,20 @@
 class GitVersionNext < Formula
   desc "increments version (git tag) numbers simply"
   homepage "https://github.com/kazeburo/git-version-next"
-  version "0.0.3"
+  version "0.0.4"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/kazeburo/git-version-next/releases/download/v0.0.3/git-version-next_darwin_amd64.zip"
-    sha256 "4a659ed34b15c3e8942e8e0c671f763cb687a18c93675f548c5722c7c5ec8696"
+    url "https://github.com/kazeburo/git-version-next/releases/download/v0.0.4/git-version-next_darwin_amd64.zip"
+    sha256 "86fc69ea97e81c81e3b2d0e8bda14eb538bd84e77cc09689b220312419e6fb33"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/kazeburo/git-version-next/releases/download/v0.0.3/git-version-next_linux_amd64.zip"
-    sha256 "38f8aa5776291a592fd30abb24616c31266402a65ac562e6c719dd283481e7ab"
+    url "https://github.com/kazeburo/git-version-next/releases/download/v0.0.4/git-version-next_linux_amd64.zip"
+    sha256 "9a633a0aaca0e95ae65711f83551df1a2c8620c6a1f658e876b7e67df82ad032"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/kazeburo/git-version-next/releases/download/v0.0.3/git-version-next_linux_arm64.zip"
-    sha256 "12361814796bafc386c9ef2e84d4e334605f8024ada0ea2f1121911c89c5384b"
+    url "https://github.com/kazeburo/git-version-next/releases/download/v0.0.4/git-version-next_linux_arm64.zip"
+    sha256 "f2b04b0d9db59e757d0f1d36a24b0666119f581b68e2ba532972361c97b2efca"
   end
 
   def install
