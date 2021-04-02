@@ -5,24 +5,24 @@
 class Sacloudns < Formula
   desc "increments version (git tag) numbers simply"
   homepage "https://github.com/kazeburo/sacloudns"
-  version "0.0.5"
+  version "0.0.6"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/kazeburo/sacloudns/releases/download/v0.0.5/sacloudns_darwin_amd64.zip"
-    sha256 "dcaadb86670053bba3f6c6664d7ef027f88ef4875be98287b1d1c52bef16da6a"
+    url "https://github.com/kazeburo/sacloudns/releases/download/v0.0.6/sacloudns_darwin_amd64.zip"
+    sha256 "93c74556f4f21edcbb472735a5018735d68d3b8eaa24b017c9cdf86820264b34"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/kazeburo/sacloudns/releases/download/v0.0.5/sacloudns_darwin_arm64.zip"
-    sha256 "2cf7adec7cd4dd8cf13ded5b4670cf94342adf33b5ff89c8d48e35578defb821"
+    url "https://github.com/kazeburo/sacloudns/releases/download/v0.0.6/sacloudns_darwin_arm64.zip"
+    sha256 "f4cff99c8fa80b7d7ee804a34c03cb91dee4092f263171fb029c898bbbc08632"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/kazeburo/sacloudns/releases/download/v0.0.5/sacloudns_linux_amd64.zip"
-    sha256 "d35e30eeca8f94f1b68857300f55f5d3a5de00c8d7db185f2f5f2128bb8cc8aa"
+    url "https://github.com/kazeburo/sacloudns/releases/download/v0.0.6/sacloudns_linux_amd64.zip"
+    sha256 "f9c6a1b69516a96757bf2725fe850edd28b405cbe28e24d9583d13dd435a773b"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/kazeburo/sacloudns/releases/download/v0.0.5/sacloudns_linux_arm64.zip"
-    sha256 "94b2b17f7b2e028b5d5c987931df8437f41ce916777b18b1517028b02a79f64f"
+    url "https://github.com/kazeburo/sacloudns/releases/download/v0.0.6/sacloudns_linux_arm64.zip"
+    sha256 "1e65137a6da44f21fd17d11d5e37d6051071d3efafbe8728471956021ccce723"
   end
 
   def install
