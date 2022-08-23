@@ -5,20 +5,20 @@
 class Percentile < Formula
   desc "display percentile"
   homepage "https://github.com/kazeburo/percentile"
-  version "0.1.3"
+  version "0.1.4"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/kazeburo/percentile/releases/download/v0.1.3/percentile_darwin_arm64.zip"
-      sha256 "6c94d58041b5ca5987f82aa4ffeae08ea34c2a93640c8896a3d3692b8bf39860"
+    if Hardware::CPU.intel?
+      url "https://github.com/kazeburo/percentile/releases/download/v0.1.4/percentile_darwin_amd64.zip"
+      sha256 "687eb3b6428a5f23d0775843166f51eadee70fadb7fe0a624717652380abd399"
 
       def install
         bin.install "percentile"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/kazeburo/percentile/releases/download/v0.1.3/percentile_darwin_amd64.zip"
-      sha256 "f6aace045da01900e5bb900e8ebe19709d48ddaff1aa76347cca94a3de0db8d2"
+    if Hardware::CPU.arm?
+      url "https://github.com/kazeburo/percentile/releases/download/v0.1.4/percentile_darwin_arm64.zip"
+      sha256 "ac7f4544004412d72e913f519bbae5dce1243c3e6643cf5290a52bd9309581fe"
 
       def install
         bin.install "percentile"
@@ -27,17 +27,17 @@ class Percentile < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/kazeburo/percentile/releases/download/v0.1.3/percentile_linux_amd64.zip"
-      sha256 "c13aa86d8c5524332f6e215f49f03473fc202a180947a14e8c6f8d773118c0c7"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/kazeburo/percentile/releases/download/v0.1.4/percentile_linux_arm64.zip"
+      sha256 "88e0194976a8a3f1d7a0e3b60d91669d6a4717508166302f31945575d1e86766"
 
       def install
         bin.install "percentile"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kazeburo/percentile/releases/download/v0.1.3/percentile_linux_arm64.zip"
-      sha256 "7ef5db185ed8368bb52c8d6b2621e01870be2a4b42e26098019ae44c5327df4d"
+    if Hardware::CPU.intel?
+      url "https://github.com/kazeburo/percentile/releases/download/v0.1.4/percentile_linux_amd64.zip"
+      sha256 "741a3beb3a0d86a3e2b063c570b5001f7f981358ca7e5e991cd4681f2d44cfd3"
 
       def install
         bin.install "percentile"
