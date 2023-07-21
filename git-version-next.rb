@@ -5,27 +5,43 @@
 class GitVersionNext < Formula
   desc "increments version (git tag) numbers simply"
   homepage "https://github.com/kazeburo/git-version-next"
-  version "0.0.5"
-  bottle :unneeded
+  version "0.0.6"
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/kazeburo/git-version-next/releases/download/v0.0.5/git-version-next_darwin_amd64.zip"
-    sha256 "f3520f6a760f2a89348e0d6ee7f8ba7d4f7169b34893639f1188e88bb6ef65e1"
-  end
-  if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/kazeburo/git-version-next/releases/download/v0.0.5/git-version-next_darwin_arm64.zip"
-    sha256 "fa77786104e7c3ba3108c0ba774fa831dd31fdda0b897eda46e9c349c6df83eb"
-  end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/kazeburo/git-version-next/releases/download/v0.0.5/git-version-next_linux_amd64.zip"
-    sha256 "0399891033f1ba394726b08fcb5fa2be5c31529bba9942dc4add8d808d905015"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/kazeburo/git-version-next/releases/download/v0.0.5/git-version-next_linux_arm64.zip"
-    sha256 "cd5707e782984f25b0882985bd92d07f144970fd23c42d668845fb3f5f87fac2"
+  on_macos do
+    if Hardware::CPU.arm?
+      url "https://github.com/kazeburo/git-version-next/releases/download/v0.0.6/git-version-next_darwin_arm64.zip"
+      sha256 "3c4e74f5f6322cfb75a2d2ffb461a37620e098f14b337613ce55364d7ed3b532"
+
+      def install
+        bin.install "git-version-next"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/kazeburo/git-version-next/releases/download/v0.0.6/git-version-next_darwin_amd64.zip"
+      sha256 "5248fbb54a6d5371fc29dcf39c1c9cd27dc2e19f912c3193c2bca1f46b48f1b9"
+
+      def install
+        bin.install "git-version-next"
+      end
+    end
   end
 
-  def install
-    bin.install "git-version-next"
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/kazeburo/git-version-next/releases/download/v0.0.6/git-version-next_linux_amd64.zip"
+      sha256 "c4936be7be5721f1dce34da5e04517dcf708dfc9949e1eb81e5b5ededdd43346"
+
+      def install
+        bin.install "git-version-next"
+      end
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/kazeburo/git-version-next/releases/download/v0.0.6/git-version-next_linux_arm64.zip"
+      sha256 "b1c20557d3b42c2028d7eaeda356187ed0dbc06f84326ff36223ad342858d2ba"
+
+      def install
+        bin.install "git-version-next"
+      end
+    end
   end
 end
