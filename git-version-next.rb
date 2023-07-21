@@ -5,20 +5,20 @@
 class GitVersionNext < Formula
   desc "increments version (git tag) numbers simply"
   homepage "https://github.com/kazeburo/git-version-next"
-  version "0.0.6"
+  version "0.1.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/kazeburo/git-version-next/releases/download/v0.0.6/git-version-next_darwin_arm64.zip"
-      sha256 "3c4e74f5f6322cfb75a2d2ffb461a37620e098f14b337613ce55364d7ed3b532"
+      url "https://github.com/kazeburo/git-version-next/releases/download/v0.1.0/git-version-next_darwin_arm64.zip"
+      sha256 "237fefc4b3f825aed81e7d6d2a79376dd226e08ae93af0f8659520b5751a91ee"
 
       def install
         bin.install "git-version-next"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/kazeburo/git-version-next/releases/download/v0.0.6/git-version-next_darwin_amd64.zip"
-      sha256 "5248fbb54a6d5371fc29dcf39c1c9cd27dc2e19f912c3193c2bca1f46b48f1b9"
+      url "https://github.com/kazeburo/git-version-next/releases/download/v0.1.0/git-version-next_darwin_amd64.zip"
+      sha256 "bda1d5137f44e3c53c338420aa7d8aa5b916bfc8ec2e50ead09769bffc71f5aa"
 
       def install
         bin.install "git-version-next"
@@ -27,17 +27,17 @@ class GitVersionNext < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/kazeburo/git-version-next/releases/download/v0.0.6/git-version-next_linux_amd64.zip"
-      sha256 "c4936be7be5721f1dce34da5e04517dcf708dfc9949e1eb81e5b5ededdd43346"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/kazeburo/git-version-next/releases/download/v0.1.0/git-version-next_linux_arm64.zip"
+      sha256 "07f50f9eda6c8ca5345e97c9fb3599178d4cd9f3ddb1bd0bc8c9d23e26785460"
 
       def install
         bin.install "git-version-next"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kazeburo/git-version-next/releases/download/v0.0.6/git-version-next_linux_arm64.zip"
-      sha256 "b1c20557d3b42c2028d7eaeda356187ed0dbc06f84326ff36223ad342858d2ba"
+    if Hardware::CPU.intel?
+      url "https://github.com/kazeburo/git-version-next/releases/download/v0.1.0/git-version-next_linux_amd64.zip"
+      sha256 "b08783696548f47c45f74a072d16893432044c849c42db0af1f3b5db30ed7c02"
 
       def install
         bin.install "git-version-next"
