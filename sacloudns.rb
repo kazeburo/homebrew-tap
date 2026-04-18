@@ -5,27 +5,41 @@
 class Sacloudns < Formula
   desc "increments version (git tag) numbers simply"
   homepage "https://github.com/kazeburo/sacloudns"
-  version "0.0.6"
-  bottle :unneeded
+  version "0.0.7"
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/kazeburo/sacloudns/releases/download/v0.0.6/sacloudns_darwin_amd64.zip"
-    sha256 "93c74556f4f21edcbb472735a5018735d68d3b8eaa24b017c9cdf86820264b34"
-  end
-  if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/kazeburo/sacloudns/releases/download/v0.0.6/sacloudns_darwin_arm64.zip"
-    sha256 "f4cff99c8fa80b7d7ee804a34c03cb91dee4092f263171fb029c898bbbc08632"
-  end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/kazeburo/sacloudns/releases/download/v0.0.6/sacloudns_linux_amd64.zip"
-    sha256 "f9c6a1b69516a96757bf2725fe850edd28b405cbe28e24d9583d13dd435a773b"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/kazeburo/sacloudns/releases/download/v0.0.6/sacloudns_linux_arm64.zip"
-    sha256 "1e65137a6da44f21fd17d11d5e37d6051071d3efafbe8728471956021ccce723"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/kazeburo/sacloudns/releases/download/v0.0.7/sacloudns_darwin_amd64.zip"
+      sha256 "28671d73cacca5d20eeca5ee20ed8a32ef4db66beacb13debd4530f3edf8340c"
+
+      define_method(:install) do
+        bin.install "sacloudns"
+      end
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/kazeburo/sacloudns/releases/download/v0.0.7/sacloudns_darwin_arm64.zip"
+      sha256 "a1f1c99df39cbffc453568be187f473010a6dd6879a304a2878fec805cf380f9"
+
+      define_method(:install) do
+        bin.install "sacloudns"
+      end
+    end
   end
 
-  def install
-    bin.install "sacloudns"
+  on_linux do
+    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+      url "https://github.com/kazeburo/sacloudns/releases/download/v0.0.7/sacloudns_linux_amd64.zip"
+      sha256 "f63dfdd775fbf735c44d31bfa193cb24044b227b0dd0a73352fba79578330333"
+      define_method(:install) do
+        bin.install "sacloudns"
+      end
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/kazeburo/sacloudns/releases/download/v0.0.7/sacloudns_linux_arm64.zip"
+      sha256 "b07998f074cfd8f590e40d03a21271160b24e05353d4be16b4ee22c08290aada"
+      define_method(:install) do
+        bin.install "sacloudns"
+      end
+    end
   end
 end
