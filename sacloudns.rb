@@ -5,20 +5,20 @@
 class Sacloudns < Formula
   desc "increments version (git tag) numbers simply"
   homepage "https://github.com/kazeburo/sacloudns"
-  version "0.0.7"
+  version "0.0.8"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/kazeburo/sacloudns/releases/download/v0.0.7/sacloudns_darwin_amd64.zip"
-      sha256 "28671d73cacca5d20eeca5ee20ed8a32ef4db66beacb13debd4530f3edf8340c"
+      url "https://github.com/kazeburo/sacloudns/releases/download/v0.0.8/sacloudns_darwin_amd64.zip"
+      sha256 "c0c4af615fb94717167dca03559110ec5e4da52a08417df6f88993fec6f29255"
 
       define_method(:install) do
         bin.install "sacloudns"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/kazeburo/sacloudns/releases/download/v0.0.7/sacloudns_darwin_arm64.zip"
-      sha256 "a1f1c99df39cbffc453568be187f473010a6dd6879a304a2878fec805cf380f9"
+      url "https://github.com/kazeburo/sacloudns/releases/download/v0.0.8/sacloudns_darwin_arm64.zip"
+      sha256 "216d7cbcb6fd06ccf4030e3bd368fd072fa410098d6b47ec397af6a638738e16"
 
       define_method(:install) do
         bin.install "sacloudns"
@@ -28,15 +28,15 @@ class Sacloudns < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kazeburo/sacloudns/releases/download/v0.0.7/sacloudns_linux_amd64.zip"
-      sha256 "f63dfdd775fbf735c44d31bfa193cb24044b227b0dd0a73352fba79578330333"
+      url "https://github.com/kazeburo/sacloudns/releases/download/v0.0.8/sacloudns_linux_amd64.zip"
+      sha256 "7bae77ec494283a3f0e9004f3b76214ae4ceceb3c4d17039a2a411112c44c334"
       define_method(:install) do
         bin.install "sacloudns"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kazeburo/sacloudns/releases/download/v0.0.7/sacloudns_linux_arm64.zip"
-      sha256 "b07998f074cfd8f590e40d03a21271160b24e05353d4be16b4ee22c08290aada"
+      url "https://github.com/kazeburo/sacloudns/releases/download/v0.0.8/sacloudns_linux_arm64.zip"
+      sha256 "0876c60803341487dd2f09224364324bc9681aa3a863e92d342c29fd834131d0"
       define_method(:install) do
         bin.install "sacloudns"
       end
