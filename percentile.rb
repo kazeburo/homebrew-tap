@@ -5,20 +5,20 @@
 class Percentile < Formula
   desc "display percentile"
   homepage "https://github.com/kazeburo/percentile"
-  version "0.1.5"
+  version "0.1.6"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/kazeburo/percentile/releases/download/v0.1.5/percentile_darwin_amd64.zip"
-      sha256 "6a20763d936c0da52c00b9491e1a00fa9774adedb9c50c3f7f673848521037de"
+      url "https://github.com/kazeburo/percentile/releases/download/v0.1.6/percentile_darwin_amd64.zip"
+      sha256 "3e084e5305e78236d3f43e9fe6ea50f4d6e0c510e682255414fc62f40feefa98"
 
       define_method(:install) do
         bin.install "percentile"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/kazeburo/percentile/releases/download/v0.1.5/percentile_darwin_arm64.zip"
-      sha256 "d2b77924a70f112e9fdf407bcc0d8f91697bae6227e22557a893e28ed7cd6857"
+      url "https://github.com/kazeburo/percentile/releases/download/v0.1.6/percentile_darwin_arm64.zip"
+      sha256 "b5e8370dc5f1d9180a6316551a192bd417938a78f5cf51c2304ea5f2d25f7bb7"
 
       define_method(:install) do
         bin.install "percentile"
@@ -28,15 +28,15 @@ class Percentile < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kazeburo/percentile/releases/download/v0.1.5/percentile_linux_amd64.zip"
-      sha256 "0a51f964e3a2506abfa4db3da89accbd5bfdee8adc1a8d34491ec64e376090a8"
+      url "https://github.com/kazeburo/percentile/releases/download/v0.1.6/percentile_linux_amd64.zip"
+      sha256 "df7aa07e4374ad4a79b4e391a2909efe0d4c49b9c568fc02466e0d3e5743957e"
       define_method(:install) do
         bin.install "percentile"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kazeburo/percentile/releases/download/v0.1.5/percentile_linux_arm64.zip"
-      sha256 "151980317916c9eaf1c1673c8b971556cb0ab46b6d7d23c2204d93431109fd51"
+      url "https://github.com/kazeburo/percentile/releases/download/v0.1.6/percentile_linux_arm64.zip"
+      sha256 "4df8e780492a21598dd67c3fefa600668b760d56da0f762486b890dbbc70e623"
       define_method(:install) do
         bin.install "percentile"
       end
